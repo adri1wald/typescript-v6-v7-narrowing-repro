@@ -1,0 +1,18 @@
+{
+  "name": "typescript-v6-v7-narrowing-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "pnpm run check:ts6 && pnpm run check:ts7",
+    "check:controls": "pnpm run check:controls:ts6 && pnpm run check:controls:ts7",
+    "check:controls:ts6": "tsc6 --ignoreConfig --strict --noEmit --pretty false src/control-cases.ts",
+    "check:controls:ts7": "tsc --ignoreConfig --strict --noEmit --pretty false src/control-cases.ts",
+    "check:ts6": "tsc6 -p tsconfig.json --pretty false --noEmit",
+    "check:ts7": "tsc -p tsconfig.json --pretty false --noEmit"
+  },
+  "devDependencies": {
+    "@typescript/native": "npm:typescript@7.0.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
+  },
+  "packageManager": "pnpm@11.6.0"
+}
